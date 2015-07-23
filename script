@@ -1,15 +1,33 @@
 <?php
 
-$images = array("night" => '<img src="NULL" height="42" width ="60"></img>', "day" => "NULL",)
+$images = array(
+    "second" => 'NULL',
+    "dawn" => 'NULL',
+    "morn" => 'NULL',
+    "after" => 'NULL',
+    "dusk" => 'NULL',
+    "first" => 'NULL',
+    )
 
-if (date("l) = "Sunday"||"Monday") {
-    $time_of_day = "night";
+if (date("l") = "Sunday") {
+    $time_of_day = "second";
 }
-elseif (time().hours() / 3 >= 9 && time().hours() /3 < 18) {
-    $time_of_day = "morning";
+elseif (date("l") = "Monday")) {
+    $time_of_day = "dawn";
+}
+elseif (date("l") = "Tuesday"|| date("l")= "Wednesday")) {
+    $time_of_day = "morn";
+}
+elseif (date("l") = "Thursday")) {
+    $time_of_day = "after";
+}
+elseif (date("l") = "Friday")) {
+    $time_of_day = "dusk";
+}
+elseif (date("l") = "Saturday")) {
+    $time_of_day = "first";
 }
 else {
-    $time_of_day = "day";
 }
 
 echo "<img src=$images[$time_of_day]>";
