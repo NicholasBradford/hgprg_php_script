@@ -1,0 +1,16 @@
+<?php
+
+$images = array("night" => '<img src="NULL" height="42" width ="60"></img>', "day" => "NULL",)
+
+if (date("l) = "Sunday"||"Monday") {
+    $time_of_day = "night";
+}
+elseif (time().hours() / 3 >= 9 && time().hours() /3 < 18) {
+    $time_of_day = "morning";
+}
+else {
+    $time_of_day = "day";
+}
+
+echo "<img src=$images[$time_of_day]>";
+?>
